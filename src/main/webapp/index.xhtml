@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:b="http://bootsfaces.net/ui">
 <h:head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Hello World</title>
+    <h:tittle>Calculadora Web</h:tittle><br/><br/>
 </h:head>
 <h:body>
-    <h:outputText value="#{principal.mensagem}"/>
+    <h:form>
+        <h:outputText value="#{principal.mensagem}"></h:outputText><br/><br/>
+        <h:outputText value="Informe o nome do Usuário:"></h:outputText>
+        <h:inputText value="#{principal.nomeUsuario}"></h:inputText>
+        <h:outputText value="  Olá, seu nome é:  #{principal.nomeUsuario}" rendered="#{not empty principal.nomeUsuario}"></h:outputText><br/>
+        <h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton>
+    </h:form>
 </h:body>
 </html>
