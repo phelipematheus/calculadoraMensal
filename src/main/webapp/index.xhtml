@@ -4,7 +4,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
     xmlns:b="http://bootsfaces.net/ui">
 <h:head>
-    <h:tittle>Calculadora Web</h:tittle><br/><br/>
+    <tittle>Calculadora Web</tittle><br/><br/>
 </h:head>
 <h:body>
     <h:form>
@@ -12,7 +12,30 @@
         <h:outputText value="Informe o nome do Usuário:"></h:outputText>
         <h:inputText value="#{principal.nomeUsuario}"></h:inputText>
         <h:outputText value="  Olá, seu nome é:  #{principal.nomeUsuario}" rendered="#{not empty principal.nomeUsuario}"></h:outputText><br/>
-        <h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton>
+        <h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton><br/><br/>
     </h:form>
+    <b:dataTable var="TESTE"
+               excel="true"
+               csv="true"
+               pdf="true"
+               columnVisibility="true"
+               copy="true"
+               print="true">
+        <b:dataTableColumn label="Coluna 1">
+            <h:outputText value="RESPOSTA DO TESTE"></h:outputText>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Coluna 2">
+            <h:outputText value="RESPOSTA DO TESTE"></h:outputText>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Coluna 3">
+            <h:outputText value="RESPOSTA DO TESTE"></h:outputText>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Coluna 4">
+            <h:outputText value="RESPOSTA DO TESTE"></h:outputText>
+        </b:dataTableColumn>
+        <b:dataTableColumn label="Coluna 5">
+            <h:outputText value="RESPOSTA DO TESTE"></h:outputText>
+        </b:dataTableColumn>
+    </b:dataTable>
 </h:body>
 </html>
