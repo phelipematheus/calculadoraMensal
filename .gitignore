@@ -121,6 +121,7 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
+MANIFEST.MF
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
