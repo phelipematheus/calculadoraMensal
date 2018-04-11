@@ -4,28 +4,41 @@
 	xmlns:h="http://java.sun.com/jsf/html"
     xmlns:b="http://bootsfaces.net/ui">
 <h:head>
-    <tittle>Calculadora Web</tittle><br/><br/>
+    <title>Calculadora Web</title><br/><br/>
+    <meta name="author" content="The Author"></meta>
 </h:head>
-<h:body>
-    <h:form>
-        <h:outputText value="#{principal.mensagem}"></h:outputText><br/><br/>
-        <h:outputText value="Informe o nome do Usuário:"></h:outputText>
-        <h:inputText value="#{principal.nomeUsuario}"></h:inputText>
-        <h:outputText value="  Olá, seu nome é:  #{principal.nomeUsuario}" rendered="#{not empty principal.nomeUsuario}"></h:outputText><br/>
-        <h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton><br/><br/>
-    </h:form>
-    <b:dataTable var="TESTE"
-               excel="true"
-               csv="true"
-               pdf="true"
-               columnVisibility="true"
-               copy="true"
-               print="true">
-        <b:dataTableColumn label="Coluna 1"/>        
-        <b:dataTableColumn label="Coluna 2"/>
-        <b:dataTableColumn label="Coluna 3"/>
-        <b:dataTableColumn label="Coluna 4"/>
-        <b:dataTableColumn label="Coluna 5"/>
-    </b:dataTable>
+<h:body style="padding: 60px;">
+    <b:navBar brand="Calculadora Web" brandHref="#" fixed="top" inverse="true">
+        <b:navbarLinks>
+            <b:navLink value="Home" href="#"></b:navLink>
+            <b:navLink value="About" href="#about"></b:navLink>
+            <b:navLink value="Contact" href="#contact"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+    <b:container>
+        <b:jumbotron>
+                <h:form>
+                    <h:outputText value="#{principal.mensagem}"></h:outputText><br/><br/>
+                    <h:outputText value="Informe o nome do Usuário:"></h:outputText>
+                    <h:inputText value="#{principal.nomeUsuario}"></h:inputText>
+                    <h:outputText value="  Olá, seu nome é:  #{principal.nomeUsuario}" rendered="#{not empty principal.nomeUsuario}"></h:outputText><br/>
+                    <h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton><br/><br/>
+                     <b:dataTable var="TESTE"
+                               excel="false"
+                               csv="false"
+                               pdf="false"
+                               columnVisibility="false"
+                               copy="false"
+                               print="false">
+                        <b:dataTableColumn label="Coluna 1"/>        
+                        <b:dataTableColumn label="Coluna 2"/>
+                        <b:dataTableColumn label="Coluna 3"/>
+                        <b:dataTableColumn label="Coluna 4"/>
+                        <b:dataTableColumn label="Coluna 5"/>
+                    </b:dataTable>
+                </h:form>
+            </b:jumbotron>
+        </b:container>
+   
 </h:body>
 </html>
