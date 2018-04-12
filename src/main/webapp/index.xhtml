@@ -3,32 +3,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
     xmlns:b="http://bootsfaces.net/ui">
-<h:head>
-    <tittle>Calculadora Web</tittle><br/><br/>
-</h:head>
-<h:body>
-    <h:form>
-        <h:outputText value="#{principal.mensagem}"></h:outputText><br/><br/>
-        <h:outputText value="Informe o nome do Usuário:"></h:outputText>
-        <h:inputText value="#{principal.nomeUsuario}"></h:inputText>
-        <h:outputText value="  Olá, seu nome é:  #{principal.nomeUsuario}" rendered="#{not empty principal.nomeUsuario}"></h:outputText><br/>
-        <h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton><br/><br/>
-    </h:form>
-    <b:dataTable var="entrada"
-    			value="#{principal.entradas}"
-               excel="true"
-               csv="true"
-               pdf="true"
-               columnVisibility="true"
-               copy="true"
-               print="true">
-        <b:dataTableColumn label="Data" value="#{principal.data}"/>        
-        <b:dataTableColumn label="Nome" value="#{principal.nome}"/>
-        <b:dataTableColumn label="Gasto" value="#{principal.gasto}"/>
-        #{if(){
-        	
-        }
-        <b:dataTableColumn label="" value=""/>
-    </b:dataTable>
-</h:body>
+	<h:head>
+	    <title>Calculadora Web</title><br/><br/>
+	    <meta name="author" content="The Author"></meta>
+	</h:head>
+	<h:body style="padding: 60px;">
+	    <b:navBar brand="Calculadora Web" brandHref="#" fixed="top" inverse="true">
+			<b:navbarLinks>
+				<b:navLink value="Home" href="#"></b:navLink>
+				<b:navLink value="About" href="#about"></b:navLink>
+				<b:navLink value="Contact" href="#contact"></b:navLink>
+			</b:navbarLinks>
+	    </b:navBar>
+		<b:container>
+	        <b:jumbotron>
+		        <h:form>
+					<h:outputText value="#{principal.mensagem}"></h:outputText><br/><br/>
+					<h:outputText value="Informe o nome do Usuário:"></h:outputText>
+					<h:inputText value="#{principal.nomeUsuario}"></h:inputText>
+					<h:outputText value="  Olá, seu nome é:  #{principal.nomeUsuario}" rendered="#{not empty principal.nomeUsuario}"></h:outputText><br/>
+					<h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton><br/><br/>
+					
+					<b:dataTable var="entrada"
+						value="#{principal.entradas}"
+						excel="true"
+						csv="true"
+						pdf="true"
+						columnVisibility="true"
+						copy="true"
+						print="true">
+        				<b:dataTableColumn label="Data" value="#{principal.data}"/>        
+						<b:dataTableColumn label="Nome" value="#{principal.nome}"/>
+						<b:dataTableColumn label="Gasto" value="#{principal.gasto}"/>
+						#{if(){
+        			
+        				}
+						<b:dataTableColumn label="Coluna 5" value=""/>
+		            </b:dataTable>
+		            
+		        </h:form>
+		    </b:jumbotron>
+		</b:container>
+	</h:body>
 </html>
