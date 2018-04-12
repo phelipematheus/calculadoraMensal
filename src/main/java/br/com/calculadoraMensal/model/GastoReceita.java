@@ -1,11 +1,12 @@
 package br.com.calculadoraMensal.model;
 
-import java.util.Date;
+import javax.faces.bean.ManagedBean;
 
+@ManagedBean
 public class GastoReceita {
 	
 	private String nome;
-	private Date data;
+	private String data;
 	private Float valor;
 	private Boolean gasto;
 	
@@ -18,7 +19,7 @@ public class GastoReceita {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public void setValor(Float valor) {
@@ -28,7 +29,7 @@ public class GastoReceita {
 	public String getNome() {
 		return nome;
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 	public Float getValor() {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
     xmlns:b="http://bootsfaces.net/ui">
 	<h:head>
@@ -23,24 +24,13 @@
 					<h:inputText value="#{principal.nomeUsuario}"></h:inputText>
 					<h:outputText value="  Olá, seu nome é:  #{principal.nomeUsuario}" rendered="#{not empty principal.nomeUsuario}"></h:outputText><br/>
 					<h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton><br/><br/>
-					
 					<b:dataTable var="entrada"
-						value="#{principal.entradas}"
-						excel="true"
-						csv="true"
-						pdf="true"
-						columnVisibility="true"
-						copy="true"
-						print="true">
-        				<b:dataTableColumn label="Data" value="#{principal.data}"/>        
-						<b:dataTableColumn label="Nome" value="#{principal.nome}"/>
-						<b:dataTableColumn label="Gasto" value="#{principal.gasto}"/>
-						#{if(){
-        			
-        				}
-						<b:dataTableColumn label="Coluna 5" value=""/>
+                        value="#{principal.entradas}">
+        				    <b:dataTableColumn label="Data" value="#{entrada.data}"/>
+						<b:dataTableColumn label="Nome" value="#{entrada.nome}"/>
+						<b:dataTableColumn label="Gasto" value="#{entrada.valor}"/>
+						<b:dataTableColumn label="Entrada(True)/Saída(false)" value="#{entrada.gasto}"/>
 		            </b:dataTable>
-		            
 		        </h:form>
 		    </b:jumbotron>
 		</b:container>

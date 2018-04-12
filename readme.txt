@@ -7,3 +7,7 @@ Lugares de estudo:
 * https://www.bootsfaces.net/quick-start.jsf
 
 	** https://showcase.bootsfaces.net/forms/DataTable.jsf;jsessionid=xyIhY2R3FlKvmi7KNxsbSNk7Eqx5nWFrCdsAGAhb.showcase01
+	
+	
+parei na página 113 da apostila Caelum
+	

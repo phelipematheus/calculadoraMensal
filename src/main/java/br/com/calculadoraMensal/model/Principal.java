@@ -1,6 +1,8 @@
 package br.com.calculadoraMensal.model;
 
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -17,21 +19,30 @@ public class Principal {
 	private Date dataEntrada;
     private Date dataSaida;
     private List<GastoReceita> entradas;
-    
+
     public Principal() {
+    SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
+    entradas = new ArrayList<>();
     	GastoReceita entrada = new GastoReceita();
     	GregorianCalendar gc = new GregorianCalendar();
     	entrada.setNome("tramóia");
-    	entrada.setData(gc.getTime());
+    	entrada.setData(data.format(gc.getTime()));
     	entrada.setGasto(Boolean.TRUE);
     	entrada.setValor(new Float(1000.00));
-    	entradas.add(entrada);
+    entradas.add(entrada);
     }
+     
+    public void apertarAdicionar() {
+        System.out.println("Você apertou um botão");
+    }    
     
-	public void apertarAdicionar() {
-	    System.out.println("Você apertou um botão");
-	}
-    
+    public List<GastoReceita> getEntradas() {
+        return entradas;
+    }
+
+    public void setEntradas(List<GastoReceita> entradas) {
+        this.entradas = entradas;
+    }    
     
     public String getNomeUsuario() {
         return nomeUsuario;
