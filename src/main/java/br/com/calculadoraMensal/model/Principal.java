@@ -1,6 +1,10 @@
 package br.com.calculadoraMensal.model;
 
+
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean
@@ -12,7 +16,17 @@ public class Principal {
 	private Float saidaDinheiro;
 	private Date dataEntrada;
     private Date dataSaida;
+    private List<GastoReceita> entradas;
     
+    public Principal() {
+    	GastoReceita entrada = new GastoReceita();
+    	GregorianCalendar gc = new GregorianCalendar();
+    	entrada.setNome("tramóia");
+    	entrada.setData(gc.getTime());
+    	entrada.setGasto(Boolean.TRUE);
+    	entrada.setValor(new Float(1000.00));
+    	entradas.add(entrada);
+    }
     
 	public void apertarAdicionar() {
 	    System.out.println("Você apertou um botão");

@@ -14,18 +14,21 @@
         <h:outputText value="  Olá, seu nome é:  #{principal.nomeUsuario}" rendered="#{not empty principal.nomeUsuario}"></h:outputText><br/>
         <h:commandButton value="Adicionar" action="#{principal.apertarAdicionar}"></h:commandButton><br/><br/>
     </h:form>
-    <b:dataTable var="TESTE"
+    <b:dataTable var="entrada"
+    			value="#{principal.entradas}"
                excel="true"
                csv="true"
                pdf="true"
                columnVisibility="true"
                copy="true"
                print="true">
-        <b:dataTableColumn label="Coluna 1"/>        
-        <b:dataTableColumn label="Coluna 2"/>
-        <b:dataTableColumn label="Coluna 3"/>
-        <b:dataTableColumn label="Coluna 4"/>
-        <b:dataTableColumn label="Coluna 5"/>
+        <b:dataTableColumn label="Data" value="#{principal.data}"/>        
+        <b:dataTableColumn label="Nome" value="#{principal.nome}"/>
+        <b:dataTableColumn label="Gasto" value="#{principal.gasto}"/>
+        #{if(){
+        	
+        }
+        <b:dataTableColumn label="" value=""/>
     </b:dataTable>
 </h:body>
 </html>
